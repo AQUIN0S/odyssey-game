@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2ppiyo06823o"]
+
+[ext_resource type="PackedScene" uid="uid://d315ocu4xeb8n" path="res://epic/ground.tscn" id="1_b8esp"]
+[ext_resource type="PackedScene" uid="uid://c4xdc17xea5pv" path="res://characters/odysseus.tscn" id="3_jh4xm"]
+[ext_resource type="PackedScene" uid="uid://dcj3wvlqnw58n" path="res://weapons/dagger.tscn" id="4_3xg4n"]
+[ext_resource type="PackedScene" uid="uid://daqr6n4t78rdl" path="res://enemies/enemy.tscn" id="4_y8qxh"]
+
+[node name="Troy" type="Node2D"]
+
+[node name="Terrain" parent="." instance=ExtResource("1_b8esp")]
+
+[node name="Odysseus" parent="." node_paths=PackedStringArray("weapon") instance=ExtResource("3_jh4xm")]
+weapon = NodePath("../Dagger")
+
+[node name="Dagger" parent="." instance=ExtResource("4_3xg4n")]
+
+[node name="Enemy" parent="." node_paths=PackedStringArray("enemy_health") instance=ExtResource("4_y8qxh")]
+position = Vector2(100, 0)
+scale = Vector2(3, 3.01796)
+enemy_health = NodePath("../Label")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 94.0
+offset_top = 28.0
+offset_right = 134.0
+offset_bottom = 51.0

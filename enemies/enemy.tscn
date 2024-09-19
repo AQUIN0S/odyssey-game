@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqr6n4t78rdl"]
+
+[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_io581"]
+[ext_resource type="Texture2D" uid="uid://dn3wv2bn7w4pp" path="res://kenney_tiny/Characters/cyclops.png" id="2_uc8kt"]
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_io581")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uc8kt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -8, 4, -8, 6, -6, 6, 0, 8, 1, 8, 8, -8, 8, -8, 1, -6, 0, -6, -6)
