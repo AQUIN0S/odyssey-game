@@ -1,0 +1,87 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhgy5boi14vt5"]
+
+[ext_resource type="Script" path="res://components/floating_damage_text.gd" id="1_dm8gv"]
+[ext_resource type="FontFile" uid="uid://dn8wle0hr5y7r" path="res://fonts/Sofadi_One/SofadiOne-Regular.ttf" id="2_0iyjl"]
+
+[sub_resource type="Animation" id="Animation_m5unu"]
+resource_name = "float_and_pop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.4, 0.4)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_66idk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wme6l"]
+_data = {
+"RESET": SubResource("Animation_66idk"),
+"float_and_pop": SubResource("Animation_m5unu")
+}
+
+[node name="FloatingDamageText" type="Node2D"]
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_dm8gv")
+speed = 30
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -15.0
+offset_right = 25.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(-25, -15)
+theme_override_colors/font_color = Color(0.393086, 0.393086, 0.393085, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_0iyjl")
+theme_override_font_sizes/font_size = 24
+text = "200"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wme6l")
+}

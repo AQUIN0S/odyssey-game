@@ -1,11 +1,11 @@
 extends CharacterBody2D
 
-var speed = 100
+var speed: int = 100
 
 @export var weapon: Node2D
 
 func _physics_process(delta: float) -> void:
-	var direction = Vector2.ZERO
+	var direction: Vector2 = Vector2.ZERO
 	
 	if Input.is_action_pressed("move_up"):
 		direction += Vector2.UP

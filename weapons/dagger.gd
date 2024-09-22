@@ -1,24 +1,21 @@
 extends Node2D
 
-var stabbedEnemies: Dictionary = {}
+## The base attack speed for this weapon, expressed in attacks per second.
+@export var base_attack_speed: float
 
-@export var attack_speed: int
-
-func _ready() -> void:
-	$Sprite2D/Area2D/CollisionShape2D.disabled = true
+## The base damage for this weapon.
+@export var base_damage: float
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	var cursor_location = get_global_mouse_position()
+	var cursor_location: Vector2 = get_global_mouse_position()
 	look_at(cursor_location)
 
 	if Input.is_action_pressed("click"):
-		$AnimationPlayer.play("stab", -1, 10)
+		attack(base_attack_speed)
 
-func resetDamage() -> void:
-	stabbedEnemies.clear()
-
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.has_method("hurt") and not body in stabbedEnemies:
-		body.hurt()
-		stabbedEnemies[body] = null
+## Activate the attack for this weapon
+##
+## [param attack_speed]: Attack speed expressed as attacks per second.
+func attack(attack_speed: float = 1) -> void:
+		$AnimationPlayer.play("stab", -1, attack_speed)

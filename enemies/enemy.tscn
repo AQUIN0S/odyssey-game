@@ -1,14 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://daqr6n4t78rdl"]
+[gd_scene load_steps=4 format=3 uid="uid://daqr6n4t78rdl"]
 
-[ext_resource type="Script" path="res://enemies/enemy.gd" id="1_io581"]
 [ext_resource type="Texture2D" uid="uid://dn3wv2bn7w4pp" path="res://kenney_tiny/Characters/cyclops.png" id="2_uc8kt"]
+[ext_resource type="PackedScene" uid="uid://ck6u6aetmu153" path="res://components/health.tscn" id="3_7d15q"]
+[ext_resource type="PackedScene" uid="uid://sht4o63dekoq" path="res://components/hitbox.tscn" id="3_28gwf"]
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 motion_mode = 1
-script = ExtResource("1_io581")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_uc8kt")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="EnemySize" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-4, -8, 4, -8, 6, -6, 6, 0, 8, 1, 8, 8, -8, 8, -8, 1, -6, 0, -6, -6)
+
+[node name="Health" parent="." instance=ExtResource("3_7d15q")]
+offset_left = -9.0
+offset_top = 10.0
+offset_right = 171.0
+offset_bottom = 40.0
+scale = Vector2(0.1, 0.1)
+max_value = 1000.0
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_28gwf")]
+collision_layer = 4
+health = NodePath("../Health")
+
+[node name="HitboxSensor" type="CollisionPolygon2D" parent="Hitbox"]
 polygon = PackedVector2Array(-4, -8, 4, -8, 6, -6, 6, 0, 8, 1, 8, 8, -8, 8, -8, 1, -6, 0, -6, -6)

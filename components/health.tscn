@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ck6u6aetmu153"]
+
+[ext_resource type="Script" path="res://components/health.gd" id="1_6qbna"]
+[ext_resource type="Script" path="res://components/label.gd" id="2_c1h1y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wa3a"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wxir"]
+bg_color = Color(0, 0.395666, 4.81307e-07, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+corner_detail = 4
+
+[node name="Health" type="ProgressBar"]
+offset_right = 100.0
+offset_bottom = 25.0
+theme_override_styles/background = SubResource("StyleBoxFlat_4wa3a")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wxir")
+value = 100.0
+show_percentage = false
+script = ExtResource("1_6qbna")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_right = 100.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 15
+text = "Testing"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_c1h1y")
+
+[connection signal="item_rect_changed" from="." to="Label" method="_on_health_item_rect_changed"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcj3wvlqnw58n"]
+[gd_scene load_steps=8 format=3 uid="uid://dcj3wvlqnw58n"]
 
 [ext_resource type="Script" path="res://weapons/dagger.gd" id="1_lcir5"]
 [ext_resource type="Texture2D" uid="uid://dx0x036dn1o5y" path="res://kenney_tiny/Objects/Weapons & Tools/shortsword.png" id="2_150ya"]
+[ext_resource type="PackedScene" uid="uid://cp35ydlykk3ms" path="res://components/damage_box.tscn" id="3_fpx4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_107qr"]
 size = Vector2(6, 8)
@@ -22,19 +23,18 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite2D/DamageBox:monitoring")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1ctiu"]
 resource_name = "stab"
-length = 0.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,34 +43,34 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(15, -10, 0, 0.166667, -5.74579, 30, -0.1, 0, 0.15, 0, 15, -0.133333, -6.31887, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2, 0.5)
+"points": PackedFloat32Array(15, 0, 0, 0.4, -15, 30, -0.1, 0, 0.1, 0, 15, -0.4, -10, 0.1, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
 }
-tracks/1/type = "value"
+tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D/Area2D/CollisionShape2D:disabled")
+tracks/1/path = NodePath("Sprite2D/DamageBox")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0.5),
+"times": PackedFloat32Array(1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"resetDamage"
+"method": &"reset_damage"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D/DamageBox:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ro8u"]
@@ -81,25 +81,23 @@ _data = {
 
 [node name="Dagger" type="Node2D"]
 script = ExtResource("1_lcir5")
+base_attack_speed = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 0)
 rotation = 1.5708
 texture = ExtResource("2_150ya")
 
-[node name="Area2D" type="Area2D" parent="Sprite2D"]
-position = Vector2(6.55671e-07, 15)
-rotation = -1.5708
+[node name="DamageBox" parent="Sprite2D" instance=ExtResource("3_fpx4f")]
+collision_mask = 4
+monitoring = false
+baseDamage = 10.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
-position = Vector2(17, 0)
-rotation = 1.5708
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DamageBox"]
+position = Vector2(-6.11226e-05, -2)
 shape = SubResource("RectangleShape2D_107qr")
-disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_0ro8u")
 }
-
-[connection signal="body_entered" from="Sprite2D/Area2D" to="." method="_on_area_2d_body_entered"]
