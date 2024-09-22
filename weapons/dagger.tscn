@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://weapons/dagger.gd" id="1_lcir5"]
 [ext_resource type="Texture2D" uid="uid://dx0x036dn1o5y" path="res://kenney_tiny/Objects/Weapons & Tools/shortsword.png" id="2_150ya"]
-[ext_resource type="PackedScene" uid="uid://cp35ydlykk3ms" path="res://components/damage_box.tscn" id="3_fpx4f"]
+[ext_resource type="PackedScene" uid="uid://cp35ydlykk3ms" path="res://components/damage_box/damage_box.tscn" id="3_fpx4f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_107qr"]
 size = Vector2(6, 8)
@@ -91,7 +91,7 @@ texture = ExtResource("2_150ya")
 [node name="DamageBox" parent="Sprite2D" instance=ExtResource("3_fpx4f")]
 collision_mask = 4
 monitoring = false
-baseDamage = 10.0
+base_damage = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DamageBox"]
 position = Vector2(-6.11226e-05, -2)

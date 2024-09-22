@@ -12,8 +12,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += movement * delta
 
-func init_floating_text(value: int) -> void:
-	$Label.text = "%s" % abs(value)
+func init_floating_text(value: float) -> void:
+	$Label.text = "%s" % abs(int(value))
 	
 	if value < 0:
 		$Label.add_theme_color_override("font_color", Color(1, 0, 0))

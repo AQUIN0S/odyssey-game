@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cp35ydlykk3ms"]
 
-[ext_resource type="Script" path="res://components/damage_box.gd" id="1_u7ymx"]
+[ext_resource type="Script" path="res://components/damage_box/damage_box.gd" id="1_u7ymx"]
 
 [node name="DamageBox" type="Area2D"]
 collision_mask = 6

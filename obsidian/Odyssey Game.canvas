@@ -1,0 +1,31 @@
+{
+	"nodes":[
+		{"id":"635c3f726117709e","type":"text","text":"# Odyssey Game","x":-440,"y":-170,"width":280,"height":80,"color":"1"},
+		{"id":"08d573dcc0f92133","type":"text","text":"## Basic idea\n\nTop-down hack-and-slash with multiple party members, where the player can command tactically with a god-view, or jump into a character and fight on the battlefield.\n\nEach character follows a particular archetype throughout the story, except Odysseus who is a \"Warrior of the Mind\", meaning he can respec into any of the skill trees between battles.\n\nThroughout the story Odysseus becomes stronger but more alone as he loses party members, meaning the hack-and-slash aspect comes more into play the longer you go. (Not entirely sure I like this one so may or may not go with this).","x":-510,"y":-780,"width":420,"height":460},
+		{"id":"e5598af7b0f3f898","type":"text","text":"Feeling part of an epic storyline","x":399,"y":-427,"width":250,"height":60},
+		{"id":"bd07d8eef94d4bea","type":"text","text":"Tactical control over your soldiers, while being a champion among men","x":403,"y":-328,"width":250,"height":103},
+		{"id":"dde7dbe49b54a0f3","type":"text","text":"Tactically command your allies","x":403,"y":-102,"width":250,"height":60},
+		{"id":"108cd0759bac7b95","type":"text","text":"Pointer based hack-and-slash","x":406,"y":-197,"width":250,"height":60},
+		{"id":"a2e8c9a6d3374936","type":"text","text":"## Themes","x":20,"y":-360,"width":160,"height":50,"color":"#0000c8"},
+		{"id":"b91d008f58d68bbd","type":"text","text":"## Gameplay","x":20,"y":-99,"width":195,"height":55,"color":"#0000c8"},
+		{"id":"359ca8e7a3eacdea","type":"text","text":"Determination bar fills as Odysseus loses allies, gaining power as his allies flee.","x":402,"y":-8,"width":278,"height":108},
+		{"id":"e0cc23721914cd21","type":"text","text":"wasd movement","x":406,"y":140,"width":250,"height":60},
+		{"id":"c45d6f0c81820986","type":"text","text":"Cursor aiming, click to attack / activate abilities","x":406,"y":230,"width":250,"height":60},
+		{"id":"471674824ffbdd32","type":"text","text":"Scroll between weapons and abilities","x":406,"y":330,"width":250,"height":60},
+		{"id":"b65f51a785a68e80","type":"text","text":"## Controls","x":20,"y":230,"width":250,"height":60,"color":"#0000c8"}
+	],
+	"edges":[
+		{"id":"d38922b1378e3a72","fromNode":"635c3f726117709e","fromSide":"top","toNode":"08d573dcc0f92133","toSide":"bottom"},
+		{"id":"5f9c2e11bfecfdbb","fromNode":"635c3f726117709e","fromSide":"right","toNode":"a2e8c9a6d3374936","toSide":"left"},
+		{"id":"d6d6fd4e73537d08","fromNode":"a2e8c9a6d3374936","fromSide":"right","toNode":"e5598af7b0f3f898","toSide":"left"},
+		{"id":"3f32a976580bff73","fromNode":"a2e8c9a6d3374936","fromSide":"right","toNode":"bd07d8eef94d4bea","toSide":"left"},
+		{"id":"b5e18dc2506a5883","fromNode":"635c3f726117709e","fromSide":"right","toNode":"b91d008f58d68bbd","toSide":"left"},
+		{"id":"efce7a349c04514c","fromNode":"b91d008f58d68bbd","fromSide":"right","toNode":"108cd0759bac7b95","toSide":"left"},
+		{"id":"d2c4658c58671eed","fromNode":"b91d008f58d68bbd","fromSide":"right","toNode":"dde7dbe49b54a0f3","toSide":"left"},
+		{"id":"5964f4285e861a79","fromNode":"635c3f726117709e","fromSide":"right","toNode":"b65f51a785a68e80","toSide":"left"},
+		{"id":"cedd8ed126bc9374","fromNode":"b65f51a785a68e80","fromSide":"right","toNode":"e0cc23721914cd21","toSide":"left"},
+		{"id":"8822705bd14ea3d7","fromNode":"b65f51a785a68e80","fromSide":"right","toNode":"c45d6f0c81820986","toSide":"left"},
+		{"id":"705cf7275d38a8f3","fromNode":"b65f51a785a68e80","fromSide":"right","toNode":"471674824ffbdd32","toSide":"left"},
+		{"id":"1ca29467e27b5af3","fromNode":"b91d008f58d68bbd","fromSide":"right","toNode":"359ca8e7a3eacdea","toSide":"left"}
+	]
+}

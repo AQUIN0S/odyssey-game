@@ -13,7 +13,9 @@ class_name Health
 func _ready() -> void:
 	set_health_text()
 
-## Deal damage to the entity. 
+## Deal damage to the entity. Will perform damage calculations taking into
+## account the resistances of this entity, and return the final damage dealt to
+## this entity's health.
 func deal_damage(damage: float) -> float:
 	if is_invulnerable:
 		return 0
@@ -22,8 +24,8 @@ func deal_damage(damage: float) -> float:
 	damage -= resist_flat
 	
 	damage = max(damage, 0)
-	var actualDamage = update_health(-damage) * -1
-	return actualDamage
+	var actual_damage: float = update_health(-damage) * -1
+	return actual_damage
 
 func check_death() -> void:
 	if not is_immortal and value <= 0:
@@ -32,7 +34,7 @@ func check_death() -> void:
 			parent.die()
 
 func update_health(amount: float) -> float:
-	var prev_value = value
+	var prev_value: float = value
 	value = max(0, amount + value)
 	set_health_text()
 	return value - prev_value

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ck6u6aetmu153"]
 
-[ext_resource type="Script" path="res://components/health.gd" id="1_6qbna"]
-[ext_resource type="Script" path="res://components/label.gd" id="2_c1h1y"]
+[ext_resource type="Script" path="res://components/health/health.gd" id="1_6qbna"]
+[ext_resource type="Script" path="res://components/floating_damage_text/label.gd" id="2_c1h1y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4wa3a"]
 bg_color = Color(0, 0, 0, 0.588235)

@@ -4,8 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c4xdc17xea5pv" path="res://characters/odysseus.tscn" id="3_jh4xm"]
 [ext_resource type="PackedScene" uid="uid://dcj3wvlqnw58n" path="res://weapons/dagger.tscn" id="4_3xg4n"]
 [ext_resource type="PackedScene" uid="uid://daqr6n4t78rdl" path="res://enemies/enemy.tscn" id="4_y8qxh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tuo4d"]
+[ext_resource type="Script" path="res://components/floating_damage_text/floating_damage_text_spawner.gd" id="5_leuiv"]
 
 [node name="Troy" type="Node2D"]
 
@@ -20,8 +19,5 @@ weapon = NodePath("../Dagger")
 position = Vector2(100, 0)
 scale = Vector2(3, 3.01796)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, 100)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_tuo4d")
+[node name="FloatingDamageTextSpawner" type="Node2D" parent="."]
+script = ExtResource("5_leuiv")

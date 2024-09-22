@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "e3c326f700b861d5",
+    "type": "split",
+    "children": [
+      {
+        "id": "29f49c5bf4e85a8b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f259bbb5254a18cf",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Damage Logic.canvas",
+                "viewState": {
+                  "x": -32.1759927797836,
+                  "y": 397.0631768953069,
+                  "zoom": -0.21605417217151343
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4468cffe1b43a5d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "af2863c0614d036b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2cc169175c4f4181",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "63bafdab2692c16e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "0c7a19bd97310451",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b77e20ee21d6ef97",
+    "type": "split",
+    "children": [
+      {
+        "id": "3bf9d00361e9501b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8886cdd7465fe156",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Damage Logic.canvas",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6127ddcca6b4f6ee",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Damage Logic.canvas",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "634c861cfd1d72c9",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "79b6eb108444b7cb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Damage Logic.canvas"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f259bbb5254a18cf",
+  "lastOpenFiles": [
+    "Odyssey Game.canvas",
+    "Damage Logic.canvas"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+	"nodes":[
+		{"id":"002490a9049c6469","type":"text","text":"### _deal_damage()_\n\nCalculates final damage dealt and updates the health value.","x":590,"y":400,"width":470,"height":120,"color":"5"},
+		{"id":"12f29f1c667f7d57","type":"text","text":"## Damage Box","x":-680,"y":100,"width":250,"height":60,"color":"4"},
+		{"id":"26b49095a9713b3c","type":"text","text":"### _\\_on_area_entered()_","x":-565,"y":315,"width":270,"height":50,"color":"5"},
+		{"id":"15b87518a8bfd7f7","type":"text","text":"### _deal_damage()_\n\nPassing damage through to health component","x":-60,"y":490,"width":285,"height":120,"color":"5"},
+		{"id":"83c956b1624c9a90","type":"text","text":"## Hitbox","x":20,"y":160,"width":250,"height":60,"color":"4"},
+		{"id":"b5e95e37d4d30246","type":"text","text":"## Health","x":440,"y":225,"width":250,"height":50,"color":"4"},
+		{"id":"4cbf14f8f84d2c69","type":"text","text":"## Dagger","x":-1025,"y":-70,"width":250,"height":60,"color":"#0000ff"},
+		{"id":"41a1286372ee282e","type":"text","text":"## Wielder","x":-760,"y":-260,"width":250,"height":60,"color":"#0000ff"},
+		{"id":"b2f5ebbc8a5e4466","type":"text","text":"### _create_floating_damage_text()_","x":-1280,"y":495,"width":380,"height":50,"color":"5"},
+		{"id":"4e0bea0a13adb270","type":"text","text":"## Floating Text Spawner","x":-1040,"y":250,"width":330,"height":65,"color":"#0000ff"},
+		{"id":"f1483e1932309c29","type":"text","text":"## Enemy","x":190,"y":-70,"width":250,"height":60,"color":"#0000ff"},
+		{"id":"64e03b7f310bac02","type":"text","text":"## Floating Text","x":-960,"y":660,"width":250,"height":60,"color":"#0000ff"}
+	],
+	"edges":[
+		{"id":"d8476d92ebdb515e","fromNode":"4cbf14f8f84d2c69","fromSide":"bottom","toNode":"12f29f1c667f7d57","toSide":"top","color":"#0000ff","label":"Contains"},
+		{"id":"2a3c025422451e6f","fromNode":"f1483e1932309c29","fromSide":"bottom","toNode":"83c956b1624c9a90","toSide":"top","color":"#0000ff"},
+		{"id":"74738a2d7ec64283","fromNode":"f1483e1932309c29","fromSide":"bottom","toNode":"b5e95e37d4d30246","toSide":"top","color":"#0000ff"},
+		{"id":"5ad59945c9a08529","fromNode":"12f29f1c667f7d57","fromSide":"bottom","toNode":"26b49095a9713b3c","toSide":"top","color":"5"},
+		{"id":"409b8b7c8c1c0fee","fromNode":"41a1286372ee282e","fromSide":"bottom","toNode":"4cbf14f8f84d2c69","toSide":"top","color":"#0000ff","label":"Wields"},
+		{"id":"6f4fae363d2f4ed8","fromNode":"83c956b1624c9a90","fromSide":"left","toNode":"26b49095a9713b3c","toSide":"right","color":"1","label":"Is hit, using layers for filtering whether hitbox is valid."},
+		{"id":"35f36415e1960322","fromNode":"83c956b1624c9a90","fromSide":"bottom","toNode":"15b87518a8bfd7f7","toSide":"top","color":"5"},
+		{"id":"87f251dbf5297cad","fromNode":"26b49095a9713b3c","fromSide":"bottom","toNode":"15b87518a8bfd7f7","toSide":"left","color":"1","label":"1. Gets damage dealt"},
+		{"id":"a33ab7ce2f868b38","fromNode":"4e0bea0a13adb270","fromSide":"bottom","toNode":"b2f5ebbc8a5e4466","toSide":"top","color":"5"},
+		{"id":"1a51d6598c435013","fromNode":"b2f5ebbc8a5e4466","fromSide":"bottom","toNode":"64e03b7f310bac02","toSide":"top","color":"1","label":"Instantiates"},
+		{"id":"5fba1991a6bacac8","fromNode":"26b49095a9713b3c","fromSide":"left","toNode":"b2f5ebbc8a5e4466","toSide":"right","color":"1","label":"2. Creates floating text (if possible)"},
+		{"id":"42818779304abaad","fromNode":"b5e95e37d4d30246","fromSide":"left","toNode":"83c956b1624c9a90","toSide":"right","color":"4"},
+		{"id":"3530b3b3cdd9e990","fromNode":"b5e95e37d4d30246","fromSide":"bottom","toNode":"002490a9049c6469","toSide":"top","color":"5"},
+		{"id":"a1bc40a86178a34e","fromNode":"15b87518a8bfd7f7","fromSide":"right","toNode":"002490a9049c6469","toSide":"left","color":"1"}
+	]
+}
