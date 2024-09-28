@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Odyssey"
-run/main_scene="res://epic/troy.tscn"
+run/main_scene="res://levels/troy.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -72,6 +72,7 @@ click={
 
 2d_physics/layer_1="general"
 2d_physics/layer_2="ally"
+2d_physics/layer_3="enemy"
 
 [rendering]
 

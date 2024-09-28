@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgn8t6bxpqqgi"
-path="res://.godot/imported/OdysseyWater.png-88974399e5499010224ffc0da65db2dd.ctex"
+uid="uid://vbny3gqa551b"
+path="res://.godot/imported/OdysseyGrassObstacle.png-0ace66245a439da5414de76d055139f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://epic/OdysseyWater.png"
-dest_files=["res://.godot/imported/OdysseyWater.png-88974399e5499010224ffc0da65db2dd.ctex"]
+source_file="res://terrains/OdysseyGrassObstacle.png"
+dest_files=["res://.godot/imported/OdysseyGrassObstacle.png-0ace66245a439da5414de76d055139f2.ctex"]
 
 [params]
 

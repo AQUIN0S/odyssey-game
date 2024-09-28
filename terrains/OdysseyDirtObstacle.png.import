@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu1d7cqev1lqu"
-path="res://.godot/imported/OdysseyDirt.png-c531c0fccb50aa66081439e5d2340f03.ctex"
+uid="uid://2wo70vlmfibn"
+path="res://.godot/imported/OdysseyDirtObstacle.png-c5062474d971531f9e75466bb031188e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://epic/OdysseyDirt.png"
-dest_files=["res://.godot/imported/OdysseyDirt.png-c531c0fccb50aa66081439e5d2340f03.ctex"]
+source_file="res://terrains/OdysseyDirtObstacle.png"
+dest_files=["res://.godot/imported/OdysseyDirtObstacle.png-c5062474d971531f9e75466bb031188e.ctex"]
 
 [params]
 

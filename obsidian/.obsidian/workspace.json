@@ -4,25 +4,38 @@
     "type": "split",
     "children": [
       {
-        "id": "29f49c5bf4e85a8b",
+        "id": "810baea942384c0e",
         "type": "tabs",
         "children": [
           {
-            "id": "f259bbb5254a18cf",
+            "id": "c50c24ff1e39e71e",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Damage Logic.canvas",
+                "file": "Odyssey Game.canvas",
                 "viewState": {
-                  "x": -32.1759927797836,
-                  "y": 397.0631768953069,
-                  "zoom": -0.21605417217151343
+                  "x": 375,
+                  "y": -45,
+                  "zoom": -0.3004527625807751
                 }
               }
             }
+          },
+          {
+            "id": "01688cae70c4ff31",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Polyphemus.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Damage Logic.canvas",
+                "file": "Polyphemus.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Damage Logic.canvas",
+                "file": "Polyphemus.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Damage Logic.canvas"
+                "file": "Polyphemus.md"
               }
             }
           }
@@ -149,9 +162,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "f259bbb5254a18cf",
+  "active": "01688cae70c4ff31",
   "lastOpenFiles": [
     "Odyssey Game.canvas",
+    "Polyphemus.md",
+    "Untitled.canvas",
+    "Game Design Document.md",
     "Damage Logic.canvas"
   ]
 }
