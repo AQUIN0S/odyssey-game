@@ -4,7 +4,7 @@ class_name DamageBox
 
 var damage: float
 var damaged_enemies: Dictionary
-var vulnerable_groups: Array[String]
+var vulnerable_groups: Array[StringName]
 
 func reset_damage() -> void:
 	damaged_enemies.clear()
