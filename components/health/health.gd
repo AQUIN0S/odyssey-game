@@ -40,4 +40,7 @@ func update_health(amount: float) -> float:
 	return value - prev_value
 
 func set_health_text() -> void:
-	$Label.text = "%s / %s" % [value, max_value]
+	if show_health:
+		$Label.text = "%s / %s" % [value, max_value]
+	elif $Label.text != "":
+		$Label.text = ""

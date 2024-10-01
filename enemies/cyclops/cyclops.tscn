@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://daqr6n4t78rdl"]
+
+[ext_resource type="Script" path="res://enemies/cyclops/cyclops.gd" id="1_fccha"]
+[ext_resource type="Texture2D" uid="uid://ctwrkjqu6c1um" path="res://enemies/cyclops/Polyphemus.png" id="2_v6r58"]
+[ext_resource type="PackedScene" uid="uid://ck6u6aetmu153" path="res://components/health/health.tscn" id="3_7d15q"]
+[ext_resource type="PackedScene" uid="uid://sht4o63dekoq" path="res://components/hitbox/hitbox.tscn" id="3_28gwf"]
+[ext_resource type="Script" path="res://enemies/cyclops/attacks/cyclops_attack_spawner.gd" id="5_yvjo1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3t0xr"]
+radius = 32.0156
+
+[node name="Cyclops" type="CharacterBody2D" groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_fccha")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v6r58")
+
+[node name="Health" parent="." instance=ExtResource("3_7d15q")]
+offset_left = -24.0
+offset_top = 35.0
+offset_right = 456.0
+offset_bottom = 85.0
+scale = Vector2(0.1, 0.1)
+max_value = 1000.0
+value = 500.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Hitbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_28gwf")]
+collision_layer = 4
+health = NodePath("../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_3t0xr")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 64.0
+path_postprocessing = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3t0xr")
+
+[node name="CyclopsAttackSpawner" type="Node2D" parent="."]
+script = ExtResource("5_yvjo1")
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

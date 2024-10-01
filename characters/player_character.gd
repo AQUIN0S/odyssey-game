@@ -1,9 +1,12 @@
 extends CharacterBody2D
 
 var speed: int = 100
+var equipped_weapon: EquippableWeapon
 
-@export var weapon: Node2D
+# TODO: Remove in favor of better equipping system
+var dagger_scene: PackedScene = preload("res://weapons/dagger.tscn")
 
+## Handle character movement
 func _physics_process(delta: float) -> void:
 	var direction: Vector2 = Vector2.ZERO
 	
@@ -23,7 +26,31 @@ func _physics_process(delta: float) -> void:
 
 	move_and_collide(direction * speed * delta)
 	
+	if equipped_weapon != null:
+		var cursor_location: Vector2 = get_global_mouse_position()
+		equipped_weapon.look_at(cursor_location)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	weapon.position = position
+		if Input.is_action_pressed("click"):
+			equipped_weapon.attack(1.0)
+
+## If we attach a weapon to this character, automatically
+## equip it.
+func _on_child_entered_tree(node: Node) -> void:
+	if node.is_in_group("equippable_weapon"):
+		equipped_weapon = node
+
+func equip_dagger() -> void:
+	var dagger: EquippableWeapon = dagger_scene.instantiate()
+	dagger.base_attack_speed = 3
+	dagger.base_damage = 10
+	add_child(dagger)
+
+func unequip_dagger() -> void:
+	equipped_weapon.queue_free()
+	equipped_weapon = null
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		equip_dagger()
+	else:
+		unequip_dagger()

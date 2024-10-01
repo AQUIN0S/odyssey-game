@@ -22,13 +22,14 @@ gdscript/warnings/inferred_declaration=1
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=800
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [global_group]
 
 ally="Characters able to be controlled by the player"
 enemy=""
+equippable_weapon="Weapons that can be equipped to a player"
 
 [input]
 

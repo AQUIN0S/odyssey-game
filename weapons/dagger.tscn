@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dcj3wvlqnw58n"]
 
-[ext_resource type="Script" path="res://weapons/dagger.gd" id="1_lcir5"]
+[ext_resource type="Script" path="res://weapons/equippable_weapon.gd" id="1_lcir5"]
 [ext_resource type="Texture2D" uid="uid://dx0x036dn1o5y" path="res://kenney_tiny/Objects/Weapons & Tools/shortsword.png" id="2_150ya"]
 [ext_resource type="PackedScene" uid="uid://cp35ydlykk3ms" path="res://components/damage_box/damage_box.tscn" id="3_fpx4f"]
 
@@ -79,9 +79,8 @@ _data = {
 "stab": SubResource("Animation_1ctiu")
 }
 
-[node name="Dagger" type="Node2D"]
+[node name="Dagger" type="Node2D" groups=["equippable_weapon"]]
 script = ExtResource("1_lcir5")
-base_attack_speed = 2.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(15, 0)
@@ -91,7 +90,6 @@ texture = ExtResource("2_150ya")
 [node name="DamageBox" parent="Sprite2D" instance=ExtResource("3_fpx4f")]
 collision_mask = 4
 monitoring = false
-base_damage = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DamageBox"]
 position = Vector2(-6.11226e-05, -2)

@@ -4,31 +4,28 @@
     "type": "split",
     "children": [
       {
-        "id": "810baea942384c0e",
+        "id": "23390e6015432c67",
         "type": "tabs",
         "children": [
           {
-            "id": "c50c24ff1e39e71e",
-            "type": "leaf",
-            "state": {
-              "type": "canvas",
-              "state": {
-                "file": "Odyssey Game.canvas",
-                "viewState": {
-                  "x": 375,
-                  "y": -45,
-                  "zoom": -0.3004527625807751
-                }
-              }
-            }
-          },
-          {
-            "id": "01688cae70c4ff31",
+            "id": "642c9c657efae1ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
                 "file": "Polyphemus.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ab40f28bf85a6a55",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2024-10-01 - To-do.md",
                 "mode": "source",
                 "source": false
               }
@@ -101,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Polyphemus.md",
+                "file": "2024-10-01 - To-do.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Polyphemus.md",
+                "file": "2024-10-01 - To-do.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Polyphemus.md"
+                "file": "2024-10-01 - To-do.md"
               }
             }
           }
@@ -162,12 +159,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "01688cae70c4ff31",
+  "active": "ab40f28bf85a6a55",
   "lastOpenFiles": [
+    "Damage Logic.canvas",
+    "2024-10-01 - To-do.md",
+    "Game Design Document.md",
     "Odyssey Game.canvas",
     "Polyphemus.md",
-    "Untitled.canvas",
-    "Game Design Document.md",
-    "Damage Logic.canvas"
+    "Pasted image 20240930135046.png",
+    "Personal Notes/Brain Dump - 2024-09-30.md",
+    "Pasted image 20240930135046.png.import",
+    "Untitled.canvas"
   ]
 }
