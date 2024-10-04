@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0kpxcnplt3c"]
+
+[ext_resource type="Texture2D" uid="uid://b3pw8fa7mm6p4" path="res://enemies/trojans/trojan_soldier-export.png" id="1_exvlu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ls1xk"]
+radius = 5.0
+height = 16.0
+
+[node name="TrojanSoldier" type="CharacterBody2D"]
+
+[node name="TrojanSoldier" type="Sprite2D" parent="."]
+texture = ExtResource("1_exvlu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ls1xk")

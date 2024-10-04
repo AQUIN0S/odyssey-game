@@ -14,8 +14,7 @@
 [node name="Enemy" parent="." instance=ExtResource("4_y8qxh")]
 position = Vector2(300, 0)
 punch_damage = 20.0
-attack_rate = 5.0
-attack_speed = 3.0
+attack_speed = 2.0
 
 [node name="FloatingDamageTextSpawner" type="Node2D" parent="."]
 script = ExtResource("5_leuiv")

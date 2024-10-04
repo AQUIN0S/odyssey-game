@@ -1,13 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4xdc17xea5pv"]
+[gd_scene load_steps=8 format=3 uid="uid://c4xdc17xea5pv"]
 
 [ext_resource type="Script" path="res://characters/player_character.gd" id="1_pg1gg"]
 [ext_resource type="Texture2D" uid="uid://crdwhbmllsajt" path="res://characters/Odysseus.png" id="2_nm5fi"]
 [ext_resource type="PackedScene" uid="uid://sht4o63dekoq" path="res://components/hitbox/hitbox.tscn" id="3_ya0y6"]
 [ext_resource type="PackedScene" uid="uid://ck6u6aetmu153" path="res://components/health/health.tscn" id="4_61d2v"]
+[ext_resource type="Script" path="res://characters/node_2d.gd" id="5_u6wcy"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3x8hc"]
-radius = 4.0
-height = 16.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nogl4"]
+size = Vector2(10, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svc2n"]
 size = Vector2(8, 10)
@@ -18,13 +18,16 @@ motion_mode = 1
 script = ExtResource("1_pg1gg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+rotation = 1.5708
 texture = ExtResource("2_nm5fi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_3x8hc")
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_nogl4")
 
 [node name="Hitbox" parent="." node_paths=PackedStringArray("health") instance=ExtResource("3_ya0y6")]
 health = NodePath("../Health")
@@ -39,11 +42,14 @@ offset_right = 171.0
 offset_bottom = 42.0
 scale = Vector2(0.1, 0.1)
 
-[node name="CheckButton" type="CheckButton" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("5_u6wcy")
+
+[node name="CheckButton" type="CheckButton" parent="Node2D"]
 offset_left = -472.0
 offset_top = 239.0
 offset_right = -428.0
 offset_bottom = 263.0
 
 [connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
-[connection signal="toggled" from="CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="Node2D/CheckButton" to="." method="_on_check_button_toggled"]

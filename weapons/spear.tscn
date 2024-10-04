@@ -1,0 +1,105 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjy6x1sf3qfv0"]
+
+[ext_resource type="Texture2D" uid="uid://chs14c23fo1gl" path="res://weapons/Spear.png" id="1_bfroy"]
+[ext_resource type="Script" path="res://weapons/equippable_weapon.gd" id="2_jgcwy"]
+[ext_resource type="Script" path="res://components/damage_box/damage_box.gd" id="2_l6goj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3l724"]
+size = Vector2(2, 3)
+
+[sub_resource type="Animation" id="Animation_r6crl"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageBox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_j8xwu"]
+resource_name = "stab"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.4, -10, 16, -0.25, 0, 0.25, 0, 0, -0.2, -7, 0.25, 0),
+"times": PackedFloat32Array(0, 0.4, 1)
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DamageBox:monitoring")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DamageBox")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset_damage"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i600s"]
+_data = {
+"RESET": SubResource("Animation_r6crl"),
+"attack": SubResource("Animation_j8xwu")
+}
+
+[node name="Spear" type="Node2D" groups=["equippable_weapon"]]
+script = ExtResource("2_jgcwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+rotation = 1.5708
+texture = ExtResource("1_bfroy")
+
+[node name="DamageBox" type="Area2D" parent="Sprite2D"]
+collision_mask = 4
+script = ExtResource("2_l6goj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/DamageBox"]
+position = Vector2(-5.08169e-05, -14)
+shape = SubResource("RectangleShape2D_3l724")
+metadata/_edit_group_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Sprite2D")
+libraries = {
+"": SubResource("AnimationLibrary_i600s")
+}
+
+[connection signal="area_entered" from="Sprite2D/DamageBox" to="Sprite2D/DamageBox" method="_on_area_entered"]

@@ -1,11 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dafe8ydlec1q2"]
+[gd_scene load_steps=9 format=3 uid="uid://dafe8ydlec1q2"]
 
 [ext_resource type="PackedScene" uid="uid://cp35ydlykk3ms" path="res://components/damage_box/damage_box.tscn" id="1_s5u3w"]
 [ext_resource type="Script" path="res://enemies/cyclops/attacks/punch_attack.gd" id="1_swxt0"]
 [ext_resource type="Texture2D" uid="uid://b173qygkhfgmy" path="res://enemies/cyclops/attacks/PunchRadius.png" id="2_224ty"]
 [ext_resource type="Texture2D" uid="uid://bx7ye8d4h8qrw" path="res://enemies/cyclops/attacks/PunchFill.png" id="3_4kkav"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_76ile"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e80ot"]
 radius = 16.0
@@ -15,7 +13,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PunchFill:scale")
+tracks/0/path = NodePath("PunchRadius/PunchFill:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -30,7 +28,7 @@ resource_name = "pubnch"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("PunchFill:scale")
+tracks/0/path = NodePath("PunchRadius/PunchFill:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -63,23 +61,18 @@ _data = {
 [node name="PunchAttack" type="Node2D"]
 script = ExtResource("1_swxt0")
 
-[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
-shape = SubResource("CircleShape2D_76ile")
-target_position = Vector2(0, 0)
-collide_with_areas = true
-collide_with_bodies = false
-
-[node name="DamageBox" parent="." instance=ExtResource("1_s5u3w")]
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox"]
-shape = SubResource("CircleShape2D_e80ot")
-
 [node name="PunchRadius" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_224ty")
 
-[node name="PunchFill" type="Sprite2D" parent="."]
+[node name="PunchFill" type="Sprite2D" parent="PunchRadius"]
 texture = ExtResource("3_4kkav")
+
+[node name="DamageBox" parent="PunchRadius" instance=ExtResource("1_s5u3w")]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PunchRadius/DamageBox"]
+shape = SubResource("CircleShape2D_e80ot")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

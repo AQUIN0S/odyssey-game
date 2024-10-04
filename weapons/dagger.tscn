@@ -76,7 +76,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0ro8u"]
 _data = {
 "RESET": SubResource("Animation_pmteo"),
-"stab": SubResource("Animation_1ctiu")
+"attack": SubResource("Animation_1ctiu")
 }
 
 [node name="Dagger" type="Node2D" groups=["equippable_weapon"]]

@@ -2,7 +2,7 @@ extends Node2D
 
 class_name PunchAttack
 
-@onready var damage_box: DamageBox = $DamageBox
+@onready var damage_box: DamageBox = $PunchRadius/DamageBox
 var damage: float = 10
 
 var anim_speed: float = 1

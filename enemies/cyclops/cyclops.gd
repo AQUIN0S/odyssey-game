@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var attack_rate: float = 1
 
 ## How quickly the attacks resolve (multiplier)
-@export var attack_speed: float = 2
+@export var attack_speed: float = 1
 
 var time_since_last_attack: float = 0
 
